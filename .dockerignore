@@ -1,3 +1,6 @@
 venv/
 .git
 .gitignore
+build/
+dist/
+MOBILENETV2_LUNG_DISEASE_CLASSIFIER.egg-info/
