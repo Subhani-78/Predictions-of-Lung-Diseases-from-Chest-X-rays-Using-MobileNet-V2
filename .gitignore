@@ -133,3 +133,4 @@ dmypy.json
 build/
 dist/
 MOBILENETV2_LUNG_DISEASE_CLASSIFIER.egg-info/
+src_logs/

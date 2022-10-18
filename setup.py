@@ -2,8 +2,9 @@ from setuptools import setup, find_packages
 from typing import List
 
 # Declaring setup function variables
+
 PROJECT_NAME = "MOBILENETV2-LUNG-DISEASE-CLASSIFIER"
-VERSION = "0.0.1"
+VERSION = "0.0.2"
 AUTHOR = "Mujeeb Subhani"
 DESCRIPTION = "Developed a classification and prediction model for lung pathologies of frontal thoracic X-rays using a modified model MobileNet V2." 
 
