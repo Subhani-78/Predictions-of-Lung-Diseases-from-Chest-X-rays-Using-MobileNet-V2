@@ -1,2 +1,2 @@
 # Logger Constants
-LOG_DIR_NAME = "src_logs"
+LOG_DIR_NAME = "logs"
