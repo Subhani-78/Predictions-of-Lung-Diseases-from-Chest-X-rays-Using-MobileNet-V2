@@ -1,15 +1,16 @@
 training_pipeline_config:
   pipeline_name: src
-  artifact_dir_name : artifact
+  artifact_dir : artifact
 
 data_ingestion_config:
   data_source_url : "https://www.dropbox.com/s/u6xndpb3t8rhmv1/Chest_XRay_Data.zip?dl=1"
   local_zip_data_dir : ziped_data
-  local_unzip_data_dir : unziped_data
-  local_ingested_data_dir : ingested_data
-  local_train_data_dir : train_data
-  local_test_data_dir : test_data
-  local_val_data_dir : val_data
+  local_raw_data_dir : raw_data
+  local_ingested_csv_data_dir : ingested_csv_data
+  local_train_csv_data_dir : train_csv_data
+  local_test_csv_data_dir : test_csv_data
+  local_val_csv_data_dir : val_csv_data
+
 
   
 

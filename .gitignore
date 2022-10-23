@@ -136,3 +136,5 @@ MOBILENETV2_LUNG_DISEASE_CLASSIFIER.egg-info/
 logs/
 others/
 test/
+demo.py
+src/artifact
