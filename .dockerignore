@@ -9,3 +9,4 @@ others/
 test/
 demo.py
 src/artifact
+src/.DS_Store
