@@ -11,7 +11,7 @@ from src.utils.utils import read_yaml_file
 class Configuration:
     
     
-    def __init__(self, config_file_path = CONFIG_FILE_PATH, 
+    def __init__(self, config_file_path = CONFIG_FILE_PATH,
                  current_time_stamp = CURRENT_TIME_STAMP) -> None :
         
         self.config_file_info = read_yaml_file(file_path = config_file_path)
@@ -108,6 +108,60 @@ class Configuration:
             logging.info(f" Data Ingestion Config : [{data_ingestion_config}]")
             
             return data_ingestion_config
+            
+            
+        except Exception as e:
+            raise CustomException(sys,e) from e
+        
+        
+    def get_data_validation_config(self) -> DataValidationConfig:
+        
+        """
+        Returns a named tuple containg file paths of all directories required for data validation.
+        
+        Parameters: None
+
+        Returns: 
+            data_validation_config (named tuple) -> It contains file path for the following directiories
+                
+                1. Schema_File_Path (Path to schema.yml file in config dir)
+                2. Train_Data_Validation_File_Path (Path to a directory having all train data validation reports)
+                3. Test_Data_Validation_File_Path (Path to a directory having all test data validation reports)
+                4. Val_Data_Validation_File_Path (Path to a directory having all val data validation reports)
+        """
+        try:
+            
+            # Path to artifact directory
+            artifact_dir = self.training_pipeline_config.artifact_dir
+            
+            # Path to data validation in artifact directory
+            data_validation_artifact_dir = os.path.join(
+                artifact_dir,
+                DATA_VALIDATION_ARTIFACT_DIR,
+                CURRENT_TIME_STAMP
+            )
+            
+            data_validation_config_file_info = self.config_file_info[DATA_VALIDATION_CONFIG_KEY]
+            
+            # Path to schema file in config dir
+            schema_file_path = os.path.join(
+                ROOT_DIR,
+                data_validation_config_file_info[DATA_VALIDATION_SCHEMA_DIR_NAME],
+                data_validation_config_file_info[DATA_VALIDATION_SCHEMA_FILE_NAME]
+            )
+            
+            # Path to data validation reports dir 
+            data_validation_reports = os.path.join(
+                data_validation_artifact_dir,
+                data_validation_config_file_info[DATA_VALIDATION_REPORTS]
+            )
+            
+            data_validation_config = DataValidationConfig(
+                schema_file_path=schema_file_path,
+                data_validation_reports_file_path=data_validation_reports,
+            )
+            
+            return data_validation_config
             
             
         except Exception as e:

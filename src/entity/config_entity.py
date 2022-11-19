@@ -11,6 +11,13 @@ DataIngestionConfig = namedtuple( "DataIngestionConfig",[
     "local_val_csv_data_dir"
 ])
 
+DataValidationConfig = namedtuple("DataValidationConfig",[
+    
+    "schema_file_path",
+    "data_validation_reports_file_path",
+])
+
+
 
 TrainingPipelineConfig = namedtuple( "TrainingPipelineConfig",["artifact_dir"])
 

@@ -270,7 +270,8 @@ class DataIngestion:
             local_raw_data_dir_path = self.extract_zip_data(local_zip_data_dir_path=local_zip_data_dir_path)
             local_train_raw_data_dir, local_test_raw_data_dir, local_val_raw_data_dir = self.get_raw_data_train_test_val_path(local_raw_data_dir_path=local_raw_data_dir_path)
             local_train_csv_data_dir, local_test_csv_data_dir, local_val_csv_data_dir = self.get_ingested_csv_train_test_val_path()
-            self.convert_raw_data_as_ingested_train_test_val_csv(local_train_csv_data_dir, local_test_csv_data_dir, local_val_csv_data_dir, local_train_raw_data_dir, local_test_raw_data_dir, local_val_raw_data_dir)
+            
+            return self.convert_raw_data_as_ingested_train_test_val_csv(local_train_csv_data_dir, local_test_csv_data_dir, local_val_csv_data_dir, local_train_raw_data_dir, local_test_raw_data_dir, local_val_raw_data_dir)
             
         except Exception as e:
             raise CustomException(e,sys) from e

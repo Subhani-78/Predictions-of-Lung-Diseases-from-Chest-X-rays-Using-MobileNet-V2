@@ -12,6 +12,19 @@ data_ingestion_config:
   local_val_csv_data_dir : val_csv_data
 
 
+data_validation_config:
+  schema_file_dir: config
+  schema_file_name: schema.yml
+  local_validation_reports_dir: validation_reports
+  
+
+
+
+
+
+
+
+
   
 
 

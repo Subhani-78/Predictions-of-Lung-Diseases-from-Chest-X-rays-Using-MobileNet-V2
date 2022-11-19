@@ -1,0 +1,16 @@
+columns:
+  - Label_Image_Path
+  - Image_Label
+
+column_datatypes:
+  Label_Image_Path: object
+  Image_Label: object
+
+target_column: Image_Label
+
+domain_value:
+  Image_Label:
+    - PNEUMONIA
+    - NORMAL
+
+    

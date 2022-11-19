@@ -11,3 +11,12 @@ DataIngestionArtifact = namedtuple("DataIngestionArtifact",[
     "is_ingested",
     "message"
 ])
+
+
+DataValidationArtifact = namedtuple("DataValidationArtifact",[
+    
+    "schema_file_path",
+    "data_validation_reports_file_path",
+    "is_validated",
+    "message"
+])
