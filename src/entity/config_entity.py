@@ -17,6 +17,13 @@ DataValidationConfig = namedtuple("DataValidationConfig",[
     "data_validation_reports_file_path",
 ])
 
+DataTransformationConfig = namedtuple("DataTransformationConfig",[
+    
+    "transformed_train_data_dir",
+    "transformed_test_data_dir",
+    "transformed_val_data_dir",
+])
+
 
 
 TrainingPipelineConfig = namedtuple( "TrainingPipelineConfig",["artifact_dir"])

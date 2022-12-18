@@ -11,11 +11,17 @@ data_ingestion_config:
   local_test_csv_data_dir : test_csv_data
   local_val_csv_data_dir : val_csv_data
 
-
 data_validation_config:
   schema_file_dir: config
   schema_file_name: schema.yml
   local_validation_reports_dir: validation_reports
+
+data_transformation_config:
+  transformed_data_dir: transformed_data
+  transformed_train_data_dir: train
+  transformed_test_data_dir: test
+  transformed_val_data_dir: val
+
   
 
 

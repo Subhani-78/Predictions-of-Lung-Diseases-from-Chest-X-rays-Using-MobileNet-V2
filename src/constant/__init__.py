@@ -69,7 +69,17 @@ SCHEMA_DATA_LABEL_IMAGE_PATH = 'Label_Image_Path'
 SCHEMA_DATA_IMAGE_LABEL = 'Image_Label'
 SCHEMA_DATA_DOMIAN_VALUES = 'domain_value'
 
+# Data Transformation Config Constant
 
+DATA_TRANSFORMATION_CONFIG_KEY = "data_transformation_config"
+DATA_TRANSFORMATION_ARTIFACT_DIR = "data_transformation"
+DATA_TRANSFORMATION_DIR_NAME = "transformed_data_dir"
+DATA_TRANSFORMATION_TRAIN_DIR_NAME = "transformed_train_data_dir"
+DATA_TRANSFORMATION_TEST_DIR_NAME = "transformed_test_data_dir"
+DATA_TRANSFORMATION_VAL_DIR_NAME = "transformed_val_data_dir"
+
+
+    
 
 
 

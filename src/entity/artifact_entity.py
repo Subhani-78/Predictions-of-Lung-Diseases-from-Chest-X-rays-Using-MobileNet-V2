@@ -20,3 +20,16 @@ DataValidationArtifact = namedtuple("DataValidationArtifact",[
     "is_validated",
     "message"
 ])
+
+DataTransformationArtifact = namedtuple('DataTransformationArtifact',[
+    
+    "transformed_train_data",
+    "transformed_test_data",
+    "transformed_val_data",
+    "transformed_train_data_dir",
+    "transformed_test_data_dir",
+    "transformed_val_data_dir",
+    "is_transformed",
+    "message"
+    
+])
