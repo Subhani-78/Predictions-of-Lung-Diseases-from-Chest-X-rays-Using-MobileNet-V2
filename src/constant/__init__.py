@@ -52,7 +52,7 @@ DATA_VALIDATION_SCHEMA_DIR_NAME = "schema_file_dir"
 DATA_VALIDATION_SCHEMA_FILE_NAME = "schema_file_name"
 DATA_VALIDATION_REPORTS = 'local_validation_reports_dir'
 
-# Data Ingestion Component Constants
+# Data Validation Component Constants
 DATA_VALIDATION_JSON_REPORT_FILE_NAME = "data_drift_report"
 
 TRAIN_REPORT = "train_report"
@@ -78,8 +78,16 @@ DATA_TRANSFORMATION_TRAIN_DIR_NAME = "transformed_train_data_dir"
 DATA_TRANSFORMATION_TEST_DIR_NAME = "transformed_test_data_dir"
 DATA_TRANSFORMATION_VAL_DIR_NAME = "transformed_val_data_dir"
 
+# Data Transformation Component Constants
 
-    
+IMAGE_SIZE = 224
+BATCH_SIZE = 64
+IMAGE_RESCALE = 1./255
+INTERPOLATION = 'bilinear'
+CLASS_MODE = "binary"
+
+LABELS = ['NORMAL','PNEUMONIA']
+
 
 
 

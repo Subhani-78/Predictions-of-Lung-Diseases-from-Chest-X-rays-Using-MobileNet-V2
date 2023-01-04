@@ -166,6 +166,70 @@ class Configuration:
             
         except Exception as e:
             raise CustomException(sys,e) from e
+        
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        
+        """
+        Returns a named tuple containg file paths of all directories required for data transformation.
+        
+        Parameters: None
+
+        Returns: 
+            data_transformation_config (named tuple) -> It contains file path for the following directiories
+                
+                1. Transformed_Train_Data_Dir (Path to a directory having transformed train iamges)
+                2. Transformed_Test_Data_Dir (Path to a directory having transformed test images)
+                3. Transformed_Val_Data_Dir (Path to a directory having transformed validation images)
+        """
+        
+        try:
+            
+            # Path to artifact directory
+            artifact_dir = self.training_pipeline_config.artifact_dir
+            
+            # Path to data transformation in artifact directory
+            data_transformation_artifact_dir = os.path.join(
+                artifact_dir,
+                DATA_TRANSFORMATION_ARTIFACT_DIR,
+                CURRENT_TIME_STAMP
+            )
+            
+            data_transformation_config_file_info = self.config_file_info[DATA_TRANSFORMATION_CONFIG_KEY]
+            
+            # Path to transformed_data in data_transformation//artifact
+            transformed_data_dir = os.path.join(
+                data_transformation_artifact_dir,
+                data_transformation_config_file_info[DATA_TRANSFORMATION_DIR_NAME]
+            )
+            
+            # Path to train in transformed_data//data_transformation//artifact
+            transformed_train_data_dir = os.path.join(
+                transformed_data_dir,
+                data_transformation_config_file_info[DATA_TRANSFORMATION_TRAIN_DIR_NAME]
+            )
+            
+            # Path to test in transformed_data//data_transformation//artifact
+            transformed_test_data_dir = os.path.join(
+                transformed_data_dir,
+                data_transformation_config_file_info[DATA_TRANSFORMATION_TEST_DIR_NAME]
+            )
+            
+            # Path to val in transformed_data//data_transformation//artifact
+            transformed_val_data_dir = os.path.join(
+                transformed_data_dir,
+                data_transformation_config_file_info[DATA_TRANSFORMATION_VAL_DIR_NAME]
+            )
+            
+            data_transformation_config = DataTransformationConfig(
+                transformed_train_data_dir = transformed_train_data_dir,
+                transformed_test_data_dir = transformed_test_data_dir,
+                transformed_val_data_dir = transformed_val_data_dir
+            )
+            
+            return data_transformation_config
+            
+        except Exception as e:
+            raise CustomException(sys,e) from e
     
     def get_training_pipeline_config(self) -> TrainingPipelineConfig:
         

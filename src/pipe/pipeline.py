@@ -5,6 +5,7 @@ from src.entity.artifact_entity import *
 from src.entity.config_entity import *
 from src.components.data_ingestion import DataIngestion
 from src.components.data_validation import  DataValidation
+from src.components.data_transformation import DataTransformation
 import os, sys
 
 
@@ -32,9 +33,24 @@ class Pipeline:
         except Exception as e:
             raise CustomException(e,sys) from e
         
+        
+    def start_data_transformation(self, data_ingestion_artifact:DataIngestionArtifact) -> DataTransformationArtifact:
+        try:
+            data_transformation = DataTransformation(
+                self.config.get_data_transformation_config(),
+                data_ingestion_artifcat = data_ingestion_artifact
+            )
+            
+            return data_transformation.initiate_data_transformation()
+        
+        except Exception as e:
+            raise CustomException(e, sys) from e
+        
     def run_pipeline(self):
         try:
             data_ingestion_artifact = self.start_data_ingestion()
             data_validation_artifact = self.start_data_validation(data_ingestion_artifact)
+            data_transformation_artifact = self.start_data_transformation(data_ingestion_artifact)
+            
         except Exception as e:
             raise CustomException(e,sys) from e

@@ -118,11 +118,11 @@ class DataIngestion:
             
             # Creating a file path to test directory in chest_xray
             local_test_raw_data_dir_path = os.path.join(file_local_raw_data_dir_path, TEST_DATA)
-            logging.info(f"Raw test data directory : [{local_train_raw_data_dir_path}]")
+            logging.info(f"Raw test data directory : [{local_test_raw_data_dir_path}]")
             
             # Creating a file path to val directory in chest_xray
             local_val_raw_data_dir_path = os.path.join(file_local_raw_data_dir_path, VAL_DATA)
-            logging.info(f"Raw validation data directory : [{local_train_raw_data_dir_path}]")
+            logging.info(f"Raw validation data directory : [{local_val_raw_data_dir_path}]")
             
             return local_train_raw_data_dir_path, local_test_raw_data_dir_path, local_val_raw_data_dir_path
             
